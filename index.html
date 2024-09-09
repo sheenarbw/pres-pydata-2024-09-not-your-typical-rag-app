@@ -1,40 +1,232 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<!-- <link rel="stylesheet" href="dist/theme/black.css"> -->
+	<link rel="stylesheet" href="dist/theme/black-contrast.css">
+
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Not your typical rag app</h1>
+			</section>
+			<section>
+
+				<section>
+
+					<!-- <img src="images/qr.png" style="position: absolute;"/> -->
+
+					<h2>
+						Hi, I'm <a href="https://www.linkedin.com/in/sheena-o-connell-0bb72527/"> Sheena </a>
+					</h2>
+					<span class="fragment">
+
+						🧗‍♀️🏕️🧭🇿🇦🖊️🛠️🔥🐕🎸🙃
+					</span>
+
+					<table>
+						<tr>
+							<td style="vertical-align: top">
+								<ul>
+									<li class="fragment">Coding since young teen</li>
+									<li class="fragment">Worked in a lot of startups</li>
+									<li class="fragment">
+										Most recently: CTO of Umuzi
+										<ul>
+											<li class="fragment">Science of learning => Engineering of learning</li>
+											<li class="fragment">Building the stuff</li>
+											<li class="fragment">Human processes
+											</li>
+										</ul>
+									</li>
+								</ul>
+
+
+
+							</td>
+							<td width="350" style="vertical-align: middle">
+								<img src="images/Me no background.png" class="avitar" width="350" /><br />
+
+							</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+
+					<h2>
+						And now?
+					</h2>
+
+					<!-- <span class="fragment">Still in tech-ed + ed-tech ;)</span><br /> -->
+
+					<span class="fragment">Building tools/systems to help tech educators with their trickiest
+						problems</span>
+
+					<span class="fragment">Problem 1: Teachers</span>
+
+				</section>
+			</section>
+
+			<section>
+				<h2>Enough!</h2>
+
+				Let's talk about RAGs
+			</section>
+
+			<section>
+				<section>
+
+					<h2>There was a small problem</h2>
+
+					<span>SA government is remixing qualification standards</span>
+
+					<img src="images/fine_dog.webp" height="300" />
+				</section>
+
+				<section>
+
+					<h2>Go on...</h2>
+
+					To be able to provide students with a nationally recognised certification, a course needs to
+					provably hit a lot of outcomes
+
+				</section>
+
+				<section>
+					<h2>We had a course already</h2>
+
+					The old standard was...dumb. So we ticked the boxes, then taught people properly.
+				</section>
+
+				<section>
+					<h2> The new standard</h2>
+					<ul>
+
+						<li>Has about 900 vaguely worded requirements</li>
+						<li>Has some overlap with the old stuff</li>
+						<li>Contains a whole lot of new stuff</li>
+					</ul>
+				</section>
+
+
+				<!-- <ul>
+					<li>SA government is remixing qualification standards</li>
+					<li>=> we have a massive list of outcomes/standards/skills/modules/etc we needed to hit</li>
+					<li>== nearly 900 vaguely worded requirements, just to teach basic dev</li>
+					<li>We have an existing syllabus (>1000 md files)</li>
+					<li>We need to see what we are missing</li>
+					<li>And trim out anything we can from the last iteration</li>
+				</ul> -->
+			</section>
+
+			<section>
+				<h2>Needed to</h2>
+				<ul>
+					<li>Map new requirements onto existing syllabus</li>
+					<li>=> figure out what content to develop</li>
+					<li>=> see what we can strip out</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Doing this by hand is not ...lekker...</h2>
+				<ul>
+					<li>Our syllabuses have > 1000 separate files</li>
+					<li>900ish new requirements just for one course</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Can we hit it with a RAGish app?</h2>
+				<div class="fragment">
+
+					<img src="images/kung fu rags.webp" height="400" />
+					<br />
+					Sortof...
+				</div>
+			</section>
+
+			<section>
+				<h2>The plan</h2>
+				<ul>
+					<li>Load our syllabus into a vector database</li>
+					<li>Search for each outcome to map it to different syllabus items</li>
+					<li>Find out where the gaps are and what we can cull!</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Sounds easy enough...</h2>
+			</section>
+
+			<section>
+
+				<section>
+					<img src="images/qdrantlogo.png" height="100" />
+				</section>
+
+				<section>
+					<img src="images/qdrant_page.png" height="650" />
+				</section>
+
+				<section>
+					I can run it on my laptop
+					<br />
+					🥲
+				</section>
+
+				<section>
+					<h2>Ok but how?</h2>
+
+					<ul>
+						<li>Run the database locally in a docker container</li>
+						<li>Store some vectors ⚠️
+							<ul>
+								<li>Which embedding model?</li>
+								<li>To chunk or not to chunk?</li>
+							</ul>
+						</li>
+						<li>Iterate over the outcomes and search ⚠️
+							<ul>
+								<li>Threshold?</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>
