@@ -76,7 +76,6 @@
 					<span class="fragment">Building tools/systems to help tech educators with their trickiest
 						problems</span>
 
-					<span class="fragment">Problem 1: Teachers</span>
 
 				</section>
 			</section>
@@ -92,34 +91,27 @@
 
 					<h2>There was a small problem</h2>
 
-					<span>SA government is remixing qualification standards</span>
+					<span class="fragment">SA government is remixing qualification standards</span>
 
-					<img src="images/fine_dog.webp" height="300" />
+					<img src="images/fine_dog.webp" height="300" class="fragment" />
 				</section>
 
-				<section>
 
-					<h2>Go on...</h2>
-
-					To be able to provide students with a nationally recognised certification, a course needs to
-					provably hit a lot of outcomes
-
-				</section>
 
 				<section>
 					<h2>We had a course already</h2>
 
-					The old standard was...dumb. So we ticked the boxes, then taught people properly.
+
+					<img src="images/old_syllabus.drawio.svg" height="500" />
+
 				</section>
 
 				<section>
-					<h2> The new standard</h2>
-					<ul>
+					<h2>Now...</h2>
 
-						<li>Has about 900 vaguely worded requirements</li>
-						<li>Has some overlap with the old stuff</li>
-						<li>Contains a whole lot of new stuff</li>
-					</ul>
+
+					<img src="images/required_syllabus.drawio.svg" height="500" />
+
 				</section>
 
 
@@ -207,6 +199,36 @@
 						</li>
 					</ul>
 				</section>
+
+				<section>
+					<h2>Output</h2>
+					<img src="images/mapped.drawio.svg" height="500" />
+				</section>
+
+			</section>
+
+			<section>
+				<h2>Clean up</h2>
+
+				<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+for (requirement, content) in mappings:
+     ask_an_llm("do these really go together?") 
+
+</code></pre>
+			</section>
+
+			<section>
+				Anthropic claud
+			</section>
+
+			<section>
+				<h2>Challenges</h2>
+				<ul>
+					<li>Few iterations of prompt engineering</li>
+					<li>Couldn't get a clear yes/no => Needed a yes/no/maybe</li>
+					<li>Content big(ish) => lots of tokens</li>
+					<li>Rate limits => took a while</li>
+				</ul>
 			</section>
 
 		</div>
