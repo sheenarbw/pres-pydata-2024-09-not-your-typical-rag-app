@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>reveal.js</title>
+	<title>Not your typical RAG</title>
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
@@ -18,6 +18,13 @@
 </head>
 
 <body>
+	<div
+		style="position: absolute; bottom:0.5em; font-size:2em ; text-align: left; width: 100%; color: lightgray; padding-left: 0.5em;">
+
+
+		@sheena@fosstodon.org | https://sheenaoc.com | x: @sheena_oconnell
+		<!-- <img src="images/qr2.png" height="500em"/> -->
+	</div>
 	<div class="reveal">
 		<div class="slides">
 			<section>
@@ -116,29 +123,29 @@
 
 
 				<!-- <ul>
-					<li>SA government is remixing qualification standards</li>
-					<li>=> we have a massive list of outcomes/standards/skills/modules/etc we needed to hit</li>
-					<li>== nearly 900 vaguely worded requirements, just to teach basic dev</li>
-					<li>We have an existing syllabus (>1000 md files)</li>
-					<li>We need to see what we are missing</li>
-					<li>And trim out anything we can from the last iteration</li>
+					<li class="fragment">SA government is remixing qualification standards</li>
+					<li class="fragment">=> we have a massive list of outcomes/standards/skills/modules/etc we needed to hit</li>
+					<li class="fragment">== nearly 900 vaguely worded requirements, just to teach basic dev</li>
+					<li class="fragment">We have an existing syllabus (>1000 md files)</li>
+					<li class="fragment">We need to see what we are missing</li>
+					<li class="fragment">And trim out anything we can from the last iteration</li>
 				</ul> -->
 			</section>
 
 			<section>
 				<h2>Needed to</h2>
 				<ul>
-					<li>Map new requirements onto existing syllabus</li>
-					<li>=> figure out what content to develop</li>
-					<li>=> see what we can strip out</li>
+					<li class="fragment">Map new requirements onto existing syllabus</li>
+					<li class="fragment">=> figure out what content to develop</li>
+					<li class="fragment">=> see what we can strip out</li>
 				</ul>
 			</section>
 
 			<section>
 				<h2>Doing this by hand is not ...lekker...</h2>
 				<ul>
-					<li>Our syllabuses have > 1000 separate files</li>
-					<li>900ish new requirements just for one course</li>
+					<li class="fragment">Our syllabuses have > 1000 separate files</li>
+					<li class="fragment">900ish new requirements just for one course</li>
 				</ul>
 			</section>
 
@@ -155,9 +162,9 @@
 			<section>
 				<h2>The plan</h2>
 				<ul>
-					<li>Load our syllabus into a vector database</li>
-					<li>Search for each outcome to map it to different syllabus items</li>
-					<li>Find out where the gaps are and what we can cull!</li>
+					<li class="fragment">Load our syllabus into a vector database</li>
+					<li class="fragment">Search for each outcome to map it to different syllabus items</li>
+					<li class="fragment">Find out where the gaps are and what we can cull!</li>
 				</ul>
 			</section>
 
@@ -185,16 +192,17 @@
 					<h2>Ok but how?</h2>
 
 					<ul>
-						<li>Run the database locally in a docker container</li>
-						<li>Store some vectors ⚠️
+						<li class="fragment">Run the database locally in a docker container</li>
+						<li class="fragment">Embed syllabus content and store as vectors ⚠️
 							<ul>
-								<li>Which embedding model?</li>
-								<li>To chunk or not to chunk?</li>
+								<li class="fragment">Which embedding model?</li>
+								<li class="fragment">To chunk or not to chunk?</li>
 							</ul>
 						</li>
-						<li>Iterate over the outcomes and search ⚠️
+						<li class="fragment">Iterate over the outcomes and search ⚠️
 							<ul>
-								<li>Threshold?</li>
+								<li class="fragment">Distance calculation?</li>
+								<li class="fragment">Threshold?</li>
 							</ul>
 						</li>
 					</ul>
@@ -218,16 +226,24 @@ for (requirement, content) in mappings:
 			</section>
 
 			<section>
-				Anthropic claud
+				<img src="images/claud.png" height="300" />
 			</section>
 
 			<section>
 				<h2>Challenges</h2>
 				<ul>
-					<li>Few iterations of prompt engineering</li>
-					<li>Couldn't get a clear yes/no => Needed a yes/no/maybe</li>
-					<li>Content big(ish) => lots of tokens</li>
-					<li>Rate limits => took a while</li>
+					<li class="fragment">Few iterations of prompt engineering</li>
+					<li class="fragment">Couldn't get a clear yes/no => Needed a yes/no/maybe</li>
+					<li class="fragment">Content big(ish) => lots of tokens</li>
+					<li class="fragment">Rate limits => took a while</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>In the end...</h2>
+				<ul>
+					<li>Still needed a human to look at the "maybes"</li>
+					<li>Still needed a human to look at the "maybes"</li>
 				</ul>
 			</section>
 
